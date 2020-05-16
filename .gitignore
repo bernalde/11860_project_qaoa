@@ -1,2 +1,10 @@
 # remove Jupyter checkpoints
 .ipynb_checkpoints/
+
+# awk files and intermediate files
+*.awk
+*.in
+*.out
+
+# gdx files with results
+*.gdx
