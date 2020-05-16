@@ -1,0 +1,279 @@
+--- Job maxcut.gms Start 05/15/20 22:18:31 28.2.0 r750fa45 LEX-LEG x86 64bit/Linux
+--- GAMS Parameters defined
+    Input /mnt/c/Users/debernal/GitHub/11860_project_qaoa/maxcut.gms
+    ScrDir /mnt/c/Users/debernal/GitHub/11860_project_qaoa/225a/
+    SysDir /home/bernalde/gams/gams28.2_linux_x64_64_sfx/
+GAMS 28.2.0   Copyright (C) 1987-2019 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G191212/0001AB-GEN
+          Dept. of Chemical Engineering                              DCE375
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann,
+--- Starting compilation
+--- maxcut.gms(47) 2 Mb
+--- call awk -f maxcut.awk tg207777.inc > tg207777.inc.gms
+--- maxcut.gms(50) 2 Mb
+--- . tg207777.inc.gms(806) 3 Mb
+--- maxcut.gms(152) 3 Mb
+--- Starting execution: elapsed 0:00:00.048
+--- maxcut.gms(909) 6 Mb
+--- GDX File /mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpin.gdx
+--- maxcut.gms(910) 6 Mb
+--- Job runcsdp.inc Start 05/15/20 22:18:31 28.2.0 r750fa45 LEX-LEG x86 64bit/Linux
+--- GAMS Parameters defined
+    Input /mnt/c/Users/debernal/GitHub/11860_project_qaoa/runcsdp.inc
+    ScrDir /mnt/c/Users/debernal/GitHub/11860_project_qaoa/225b/
+    SysDir /home/bernalde/gams/gams28.2_linux_x64_64_sfx/
+    LogOption 1
+GAMS 28.2.0   Copyright (C) 1987-2019 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G191212/0001AB-GEN
+          Dept. of Chemical Engineering                              DCE375
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann,
+--- Starting compilation
+--- runcsdp.inc(22) 2 Mb
+--- GDXin=/mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpin.gdx
+--- runcsdp.inc(28) 3 Mb 2 Errors
+********************************
+*** Errors have been cleared ***
+********************************
+--- runcsdp.inc(34) 3 Mb 2 Errors
+********************************
+*** Errors have been cleared ***
+********************************
+--- runcsdp.inc(104) 3 Mb
+--- call rm -f csdp.out csdpO.gms
+--- runcsdp.inc(129) 3 Mb
+*** 4 Warnings - check listing
+--- Starting execution: elapsed 0:00:00.073
+--- runcsdp.inc(105) 10 Mb
+--- runcsdp.inc(107) 10 Mb
+--- Job csdpO Start 05/15/20 22:18:32 28.2.0 r750fa45 LEX-LEG x86 64bit/Linux
+--- GAMS Parameters defined
+    Input /mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpO.gms
+    ScrDir /mnt/c/Users/debernal/GitHub/11860_project_qaoa/225c/
+    SysDir /home/bernalde/gams/gams28.2_linux_x64_64_sfx/
+    LogOption 1
+    GDX /mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpO.gdx
+GAMS 28.2.0   Copyright (C) 1987-2019 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G191212/0001AB-GEN
+          Dept. of Chemical Engineering                              DCE375
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann,
+--- Starting compilation
+--- csdpO.gms(81807) 6 Mb
+--- Starting execution - empty program
+--- GDX File /mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpO.gdx
+*** Status: Normal completion
+--- Job csdpO.gms Stop 05/15/20 22:18:33 elapsed 0:00:00.565
+--- runcsdp.inc(124) 10 Mb
+--- GDXin=/mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpO.gdx
+--- runcsdp.inc(129) 20 Mb
+--- GDX File /mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpout.gdx
+--- Putfile CSDPin /mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdp.in
+*** Status: Normal completion
+--- Job runcsdp.inc Stop 05/15/20 22:18:33 elapsed 0:00:02.204
+--- maxcut.gms(912) 6 Mb
+--- GDXin=/mnt/c/Users/debernal/GitHub/11860_project_qaoa/cholesky.gdx
+--- maxcut.gms(913) 7 Mb
+--- GDXin=/mnt/c/Users/debernal/GitHub/11860_project_qaoa/csdpout.gdx
+--- maxcut.gms(957) 17 Mb
+--- Generating MIP model maxcut
+--- maxcut.gms(958) 18 Mb
+---   3,201 rows  1,201 columns  10,401 non-zeroes
+---   400 discrete-columns
+--- Executing CPLEX: elapsed 0:00:05.540
+
+IBM ILOG CPLEX   28.2.0 r750fa45 Released Aug 19, 2019 LEG x86 64bit/Linux
+--- GAMS/Cplex licensed for continuous and discrete problems.
+Cplex 12.9.0.0
+
+*** Error Cannot open parameter file "/mnt/c/Users/debernal/GitHub/11860_project_qaoa/cplex.opt"
+*** Error Error code = 2; No such file or directory
+Reading data...
+Starting Cplex...
+Space for names approximately 0.09 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0.10000000000000001
+CPXPARAM_WorkDir                                 "/mnt/c/Users/debernal/GitHub/11860_project_qaoa/225a/"
+Found incumbent of value 0.000000 after 0.00 sec. (0.05 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 1 rows and 1 columns.
+Reduced MIP has 3200 rows, 1200 columns, and 9600 nonzeros.
+Reduced MIP has 400 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.02 sec. (6.69 ticks)
+Probing fixed 0 vars, tightened 200 bounds.
+Probing time = 0.01 sec. (0.57 ticks)
+Tried aggregator 1 time.
+Reduced MIP has 3200 rows, 1200 columns, and 9600 nonzeros.
+Reduced MIP has 1200 binaries, 0 generals, 0 SOSs, and 0 indicators.
+Presolve time = 0.01 sec. (5.91 ticks)
+Probing time = 0.00 sec. (0.54 ticks)
+MIP emphasis: balance optimality and feasibility.
+MIP search method: dynamic search.
+Parallel mode: none, using 1 thread.
+Tried aggregator 1 time.
+No LP presolve or aggregator reductions.
+Presolve time = 0.00 sec. (1.19 ticks)
+
+Iteration log . . .
+Iteration:     1   Dual objective     =      33819806.000000
+Perturbation started.
+Iteration:   101   Dual objective     =      33819806.000000
+Iteration:   275   Dual objective     =      33819805.999949
+Removing perturbation.
+Root relaxation solution time = 0.03 sec. (7.96 ticks)
+
+        Nodes                                         Cuts/
+   Node  Left     Objective  IInf  Best Integer    Best Bound    ItCnt     Gap
+
+*     0+    0                            0.0000   3.38198e+07              ---
+Found incumbent of value 0.000000 after 0.09 sec. (25.09 ticks)
+      0     0   3.38198e+07   400        0.0000   3.38198e+07      417     ---
+*     0+    0                      7717095.0000   3.38198e+07           338.25%
+Found incumbent of value 7717095.000000 after 0.10 sec. (31.63 ticks)
+      0     0   3.29323e+07   483  7717095.0000     Cuts: 173      906  326.74%
+      0     0   3.23387e+07   520  7717095.0000     Cuts: 150     1238  319.05%
+      0     0   3.20610e+07   536  7717095.0000  ZeroHalf: 84     1423  315.45%
+      0     0   3.18470e+07   570  7717095.0000 ZeroHalf: 124     1684  312.68%
+*     0+    0                      8895569.0000   3.18470e+07           258.01%
+Found incumbent of value 8895569.000000 after 0.43 sec. (267.50 ticks)
+      0     0   3.16317e+07   604  8895569.0000 ZeroHalf: 111     1918  255.59%
+*     0+    0                       1.15284e+07   3.16317e+07           174.38%
+Found incumbent of value 1.1528351e+07 after 0.54 sec. (338.80 ticks)
+      0     0   3.14292e+07   608   1.15284e+07 ZeroHalf: 117     2218  172.62%
+*     0+    0                       1.18304e+07   3.14292e+07           165.66%
+Found incumbent of value 1.1830424e+07 after 0.65 sec. (429.42 ticks)
+      0     0   3.13240e+07   581   1.18304e+07  ZeroHalf: 88     2433  164.78%
+      0     0   3.12402e+07   638   1.18304e+07 ZeroHalf: 107     2642  164.07%
+      0     0   3.11103e+07   662   1.18304e+07 ZeroHalf: 105     2862  162.97%
+*     0+    0                       1.30382e+07   3.11103e+07           138.61%
+Found incumbent of value 1.3038170e+07 after 0.94 sec. (643.33 ticks)
+      0     0   3.10458e+07   706   1.30382e+07      Cuts: 69     3112  138.11%
+*     0+    0                       1.62921e+07   3.10458e+07            90.56%
+Found incumbent of value 1.6292123e+07 after 1.07 sec. (739.17 ticks)
+*     0+    0                       1.68828e+07   3.10458e+07            83.89%
+Found incumbent of value 1.6882801e+07 after 1.09 sec. (758.88 ticks)
+*     0+    0                       2.01498e+07   3.10458e+07            54.08%
+Found incumbent of value 2.0149803e+07 after 1.10 sec. (764.55 ticks)
+*     0+    0                       2.14158e+07   3.10458e+07            44.97%
+Found incumbent of value 2.1415764e+07 after 1.11 sec. (766.84 ticks)
+      0     0   3.09434e+07   642   2.14158e+07  ZeroHalf: 97     3399   44.49%
+      0     0   3.08167e+07   700   2.14158e+07     Cuts: 154     3693   43.90%
+      0     0   3.07118e+07   645   2.14158e+07     Cuts: 119     3916   43.41%
+*     0+    0                       2.43240e+07   3.07118e+07            26.26%
+Found incumbent of value 2.4324023e+07 after 1.40 sec. (1005.11 ticks)
+*     0+    0                       2.43635e+07   3.07118e+07            26.06%
+Found incumbent of value 2.4363510e+07 after 1.41 sec. (1010.68 ticks)
+*     0+    0                       2.46406e+07   3.07118e+07            24.64%
+Found incumbent of value 2.4640584e+07 after 1.42 sec. (1016.82 ticks)
+      0     0   3.06657e+07   756   2.46406e+07  ZeroHalf: 88     4110   24.45%
+      0     0   3.05927e+07   724   2.46406e+07     Cuts: 117     4401   24.16%
+      0     0   3.05653e+07   774   2.46406e+07     Cuts: 100     4644   24.04%
+*     0+    0                       2.54678e+07   3.05653e+07            20.02%
+Found incumbent of value 2.5467776e+07 after 1.75 sec. (1261.27 ticks)
+*     0+    0                       2.59164e+07   3.05653e+07            17.94%
+Found incumbent of value 2.5916377e+07 after 1.76 sec. (1266.76 ticks)
+*     0+    0                       2.61392e+07   3.05653e+07            16.93%
+Found incumbent of value 2.6139187e+07 after 1.76 sec. (1271.53 ticks)
+      0     0   3.05310e+07   760   2.61392e+07  ZeroHalf: 81     4876   16.80%
+      0     0   3.05054e+07   762   2.61392e+07      Cuts: 66     5150   16.70%
+      0     0   3.04842e+07   737   2.61392e+07  ZeroHalf: 87     5403   16.62%
+*     0+    0                       2.62811e+07   3.04842e+07            15.99%
+Found incumbent of value 2.6281120e+07 after 2.11 sec. (1537.20 ticks)
+      0     0   3.04614e+07   725   2.62811e+07      Cuts: 83     5621   15.91%
+      0     0   3.04311e+07   779   2.62811e+07 ZeroHalf: 106     5877   15.79%
+      0     0   3.03771e+07   712   2.62811e+07  ZeroHalf: 86     6130   15.59%
+      0     0   3.03421e+07   750   2.62811e+07      Cuts: 64     6374   15.45%
+      0     0   3.03264e+07   778   2.62811e+07      Cuts: 64     6646   15.39%
+      0     0   3.03130e+07   781   2.62811e+07  ZeroHalf: 54     6903   15.34%
+*     0+    0                       2.71170e+07   3.03130e+07            11.79%
+Found incumbent of value 2.7116980e+07 after 2.83 sec. (2046.67 ticks)
+      0     0   3.03042e+07   786   2.71170e+07  ZeroHalf: 63     7123   11.75%
+      0     0   3.02960e+07   772   2.71170e+07  ZeroHalf: 48     7375   11.72%
+      0     0   3.02842e+07   778   2.71170e+07      Cuts: 42     7596   11.68%
+*     0+    0                       2.71477e+07   3.02842e+07            11.55%
+Found incumbent of value 2.7147727e+07 after 3.37 sec. (2418.98 ticks)
+*     0+    0                       2.71546e+07   3.02842e+07            11.53%
+Found incumbent of value 2.7154577e+07 after 3.38 sec. (2428.40 ticks)
+      0     0   3.02725e+07   775   2.71546e+07  ZeroHalf: 63     7823   11.48%
+      0     0   3.02559e+07   750   2.71546e+07      Cuts: 55     8058   11.42%
+      0     0   3.02465e+07   767   2.71546e+07  ZeroHalf: 68     8263   11.39%
+*     0+    0                       2.72140e+07   3.02465e+07            11.14%
+Found incumbent of value 2.7213999e+07 after 3.77 sec. (2664.15 ticks)
+*     0+    0                       2.72877e+07   3.02465e+07            10.84%
+Found incumbent of value 2.7287723e+07 after 4.11 sec. (2962.45 ticks)
+      0     2   3.02465e+07   767   2.72877e+07   3.02465e+07     8263   10.84%
+Elapsed time = 4.12 sec. (2973.13 ticks, tree = 0.01 MB, solutions = 22)
+      8    10   2.99756e+07   765   2.72877e+07   3.02424e+07    10396   10.83%
+     11    13   2.96897e+07   753   2.72877e+07   3.02424e+07    12932   10.83%
+     17    19   2.95942e+07   728   2.72877e+07   3.02424e+07    14638   10.83%
+     25    27   2.95484e+07   682   2.72877e+07   3.02424e+07    16002   10.83%
+     38    40   2.88839e+07   594   2.72877e+07   3.02424e+07    18081   10.83%
+     75    77   2.76693e+07   390   2.72877e+07   3.02424e+07    20656   10.83%
+*    80+   80                       2.73557e+07   3.02424e+07            10.55%
+Found incumbent of value 2.7355689e+07 after 5.81 sec. (4627.08 ticks)
+*    90+   90                       2.74202e+07   3.02424e+07            10.29%
+Found incumbent of value 2.7420223e+07 after 5.85 sec. (4656.69 ticks)
+*    94    92      integral     0   2.74489e+07   3.02424e+07    21114   10.18%
+Found incumbent of value 2.7448890e+07 after 5.86 sec. (4664.45 ticks)
+*    95    90      integral     0   2.74522e+07   3.02424e+07    21117   10.16%
+Found incumbent of value 2.7452167e+07 after 5.86 sec. (4667.16 ticks)
+     97    92   3.01258e+07   769   2.74522e+07   3.02423e+07    22207   10.16%
+                                                     Cuts: 10
+    100    95   3.00449e+07   752   2.74522e+07   3.02423e+07    23484   10.16%
+    104    99   2.99025e+07   730   2.74522e+07   3.02423e+07    25675   10.16%
+*   140+  106                       2.80507e+07   3.02423e+07             7.81%
+Found incumbent of value 2.8050723e+07 after 7.60 sec. (6400.60 ticks)
+
+Mixed integer rounding cuts applied:  1
+Zero-half cuts applied:  331
+Gomory fractional cuts applied:  8
+
+Root node processing (before b&c):
+  Real time             =    4.12 sec. (2969.12 ticks)
+Sequential b&c:
+  Real time             =    3.48 sec. (3432.56 ticks)
+                          ------------
+Total (root+branch&cut) =    7.60 sec. (6401.68 ticks)
+MIP status(102): integer optimal, tolerance
+Cplex Time: 7.61sec (det. 6401.69 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0.10000000000000001
+CPXPARAM_WorkDir                                 "/mnt/c/Users/debernal/GitHub/11860_project_qaoa/225a/"
+Tried aggregator 1 time.
+LP Presolve eliminated 3201 rows and 1201 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (1.20 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.00sec (det. 2.15 ticks)
+
+Solution satisfies tolerances.
+
+MIP Solution:     28050723.000000    (32010 iterations, 140 nodes)
+Final Solve:      28050723.000000    (0 iterations)
+
+Best possible:    30242349.589302
+Absolute gap:      2191626.589302
+Relative gap:            0.072469
+
+--- Restarting execution
+--- maxcut.gms(958) 15 Mb
+--- Reading solution for model maxcut
+*** Status: Normal completion
+--- Job maxcut.gms Stop 05/15/20 22:18:44 elapsed 0:00:13.415

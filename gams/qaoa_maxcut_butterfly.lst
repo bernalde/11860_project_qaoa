@@ -1,0 +1,300 @@
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  variables gamma, beta, F1;
+   2   
+   3  gamma.lo = 0;
+   4  gamma.up = pi;
+   5  beta.lo = 0;
+   6  beta.up = pi;
+   7   
+   8  equation objective;
+   9   
+  10  objective.. F1 =e= 3-(sqr(sin(2*beta))*sqr(sin(2*gamma))
+  11                  - 1/2*sin(4*beta)*sin(4*gamma))*(1+sqr(cos(4*gamma)));
+  12   
+  13  model QAOA /all/;
+  14   
+  15  option nlp = couenne, optcr = 0;
+  16   
+  17  solve QAOA using nlp max F1;
+
+
+COMPILATION TIME     =        0.001 SECONDS      2 MB  28.2.0 r750fa45 LEX-LEG
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE QAOA Using NLP From line 17
+
+
+---- objective  =E=  
+
+objective..  (0)*gamma + (0)*beta + F1 =E= 3 ; (LHS = 0, INFES = 3 ****)
+     
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE QAOA Using NLP From line 17
+
+
+---- gamma  
+
+gamma
+                (.LO, .L, .UP, .M = 0, 0, 3.14159265358979, 0)
+       (0)      objective
+
+
+---- beta  
+
+beta
+                (.LO, .L, .UP, .M = 0, 0, 3.14159265358979, 0)
+       (0)      objective
+
+
+---- F1  
+
+F1
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       objective
+
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE QAOA Using NLP From line 17
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           1     SINGLE EQUATIONS            1
+BLOCKS OF VARIABLES           3     SINGLE VARIABLES            3
+NON ZERO ELEMENTS             3     NON LINEAR N-Z              2
+DERIVATIVE POOL              20     CONSTANT POOL              16
+CODE LENGTH                  27
+
+
+GENERATION TIME      =        0.008 SECONDS      3 MB  28.2.0 r750fa45 LEX-LEG
+
+
+EXECUTION TIME       =        0.015 SECONDS      3 MB  28.2.0 r750fa45 LEX-LEG
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE QAOA Using NLP From line 17
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   QAOA                OBJECTIVE  F1
+     TYPE    NLP                 DIRECTION  MAXIMIZE
+     SOLVER  COUENNE             FROM LINE  17
+
+**** SOLVER STATUS     1 Normal Completion         
+**** MODEL STATUS      1 Optimal                   
+**** OBJECTIVE VALUE                3.4319
+
+ RESOURCE USAGE, LIMIT         12.729      1000.000
+ ITERATION COUNT, LIMIT     21488    2000000000
+ EVALUATION ERRORS              0             0
+
+COIN-OR Couenne  28.2.0 r750fa45 Released Aug 19, 2019 LEG x86 64bit/Linux    
+NLP0012I 
+NLP0014I             1         OPT -3.4319357       11 0
+Coin0506I Presolve 42 (-6) rows, 14 (-6) columns and 94 (-12) elements
+Clp0006I 0  Obj -3.4314925 Primal inf 17.97189 (15) Dual inf 0.50652341 (1)
+Clp0006I 7  Obj -4
+Clp0000I Optimal - objective value -4
+Clp0032I Optimal objective -4 - 7 iterations time 0.002, Presolve 0.00
+Clp0000I Optimal - objective value -4
+Cbc0012I Integer solution of -3.4319357 found by Couenne Rounding NLP after 0 iterations and 0 nodes (0.00 seconds)
+Clp0000I Optimal - objective value -4
+Cbc0031I 5 added rows had average density of 2
+Cbc0013I At root node, 5 cuts changed objective from -4 to -4 in 4 passes
+Cbc0014I Cut generator 0 (Couenne convexifier cuts) - 10 row cuts average 2.1 elements, 3 column cuts (3 active)
+Cbc0010I After 0 nodes, 1 on tree, -3.4319357 best solution, best possible -4 (0.04 seconds)
+Cbc0010I After 100 nodes, 35 on tree, -3.4319357 best solution, best possible -3.5445951 (0.35 seconds)
+Cbc0010I After 200 nodes, 51 on tree, -3.4319357 best solution, best possible -3.491207 (0.60 seconds)
+Cbc0010I After 300 nodes, 70 on tree, -3.4319357 best solution, best possible -3.4535155 (0.78 seconds)
+Cbc0010I After 400 nodes, 67 on tree, -3.4319357 best solution, best possible -3.436544 (0.92 seconds)
+Cbc0010I After 500 nodes, 45 on tree, -3.4319357 best solution, best possible -3.4321693 (1.08 seconds)
+Cbc0010I After 600 nodes, 26 on tree, -3.4319357 best solution, best possible -3.4319699 (1.18 seconds)
+Cbc0010I After 700 nodes, 32 on tree, -3.4319357 best solution, best possible -3.4319462 (1.29 seconds)
+Cbc0010I After 800 nodes, 45 on tree, -3.4319357 best solution, best possible -3.4319461 (1.40 seconds)
+Cbc0010I After 900 nodes, 44 on tree, -3.4319357 best solution, best possible -3.4319461 (1.50 seconds)
+Cbc0010I After 1000 nodes, 55 on tree, -3.4319357 best solution, best possible -3.4319461 (1.59 seconds)
+Cbc0010I After 1100 nodes, 68 on tree, -3.4319357 best solution, best possible -3.4319461 (1.68 seconds)
+Cbc0010I After 1200 nodes, 76 on tree, -3.4319357 best solution, best possible -3.4319461 (1.79 seconds)
+Cbc0010I After 1300 nodes, 86 on tree, -3.4319357 best solution, best possible -3.4319461 (1.87 seconds)
+Cbc0010I After 1400 nodes, 84 on tree, -3.4319357 best solution, best possible -3.4319461 (1.94 seconds)
+Cbc0010I After 1500 nodes, 88 on tree, -3.4319357 best solution, best possible -3.4319461 (2.01 seconds)
+Cbc0010I After 1600 nodes, 89 on tree, -3.4319357 best solution, best possible -3.4319461 (2.13 seconds)
+Cbc0010I After 1700 nodes, 97 on tree, -3.4319357 best solution, best possible -3.4319461 (2.30 seconds)
+Cbc0010I After 1800 nodes, 102 on tree, -3.4319357 best solution, best possible -3.4319461 (2.48 seconds)
+Cbc0010I After 1900 nodes, 103 on tree, -3.4319357 best solution, best possible -3.4319461 (2.62 seconds)
+Cbc0010I After 2000 nodes, 105 on tree, -3.4319357 best solution, best possible -3.4319461 (2.76 seconds)
+Cbc0010I After 2100 nodes, 103 on tree, -3.4319357 best solution, best possible -3.4319461 (2.86 seconds)
+Cbc0010I After 2200 nodes, 103 on tree, -3.4319357 best solution, best possible -3.4319461 (2.93 seconds)
+Cbc0010I After 2300 nodes, 102 on tree, -3.4319357 best solution, best possible -3.4319461 (2.99 seconds)
+Cbc0010I After 2400 nodes, 97 on tree, -3.4319357 best solution, best possible -3.4319461 (3.08 seconds)
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE QAOA Using NLP From line 17
+
+
+Cbc0010I After 2500 nodes, 95 on tree, -3.4319357 best solution, best possible -3.4319461 (3.16 seconds)
+Cbc0010I After 2600 nodes, 93 on tree, -3.4319357 best solution, best possible -3.431946 (3.24 seconds)
+Cbc0010I After 2700 nodes, 90 on tree, -3.4319357 best solution, best possible -3.431946 (3.32 seconds)
+Cbc0010I After 2800 nodes, 96 on tree, -3.4319357 best solution, best possible -3.431946 (3.41 seconds)
+Cbc0010I After 2900 nodes, 103 on tree, -3.4319357 best solution, best possible -3.431946 (3.52 seconds)
+Cbc0010I After 3000 nodes, 101 on tree, -3.4319357 best solution, best possible -3.431946 (3.59 seconds)
+Cbc0010I After 3100 nodes, 105 on tree, -3.4319357 best solution, best possible -3.431946 (3.67 seconds)
+Cbc0010I After 3200 nodes, 106 on tree, -3.4319357 best solution, best possible -3.431946 (3.78 seconds)
+Cbc0010I After 3300 nodes, 110 on tree, -3.4319357 best solution, best possible -3.431946 (3.85 seconds)
+Cbc0010I After 3400 nodes, 103 on tree, -3.4319357 best solution, best possible -3.431946 (3.92 seconds)
+Cbc0010I After 3500 nodes, 109 on tree, -3.4319357 best solution, best possible -3.431946 (4.00 seconds)
+Cbc0010I After 3600 nodes, 106 on tree, -3.4319357 best solution, best possible -3.431946 (4.10 seconds)
+Cbc0010I After 3700 nodes, 117 on tree, -3.4319357 best solution, best possible -3.431946 (4.17 seconds)
+Cbc0010I After 3800 nodes, 113 on tree, -3.4319357 best solution, best possible -3.431946 (4.26 seconds)
+Cbc0010I After 3900 nodes, 116 on tree, -3.4319357 best solution, best possible -3.431946 (4.36 seconds)
+Cbc0010I After 4000 nodes, 122 on tree, -3.4319357 best solution, best possible -3.431946 (4.50 seconds)
+Cbc0010I After 4100 nodes, 125 on tree, -3.4319357 best solution, best possible -3.431946 (4.59 seconds)
+Cbc0010I After 4200 nodes, 126 on tree, -3.4319357 best solution, best possible -3.431946 (4.68 seconds)
+Cbc0010I After 4300 nodes, 131 on tree, -3.4319357 best solution, best possible -3.431946 (4.76 seconds)
+Cbc0010I After 4400 nodes, 129 on tree, -3.4319357 best solution, best possible -3.431946 (4.85 seconds)
+Cbc0010I After 4500 nodes, 133 on tree, -3.4319357 best solution, best possible -3.431946 (4.93 seconds)
+Cbc0010I After 4600 nodes, 130 on tree, -3.4319357 best solution, best possible -3.431946 (5.00 seconds)
+Cbc0010I After 4700 nodes, 127 on tree, -3.4319357 best solution, best possible -3.431946 (5.09 seconds)
+Cbc0010I After 4800 nodes, 128 on tree, -3.4319357 best solution, best possible -3.431946 (5.17 seconds)
+Cbc0010I After 4900 nodes, 139 on tree, -3.4319357 best solution, best possible -3.431946 (5.25 seconds)
+Cbc0010I After 5000 nodes, 143 on tree, -3.4319357 best solution, best possible -3.431946 (5.33 seconds)
+Cbc0010I After 5100 nodes, 138 on tree, -3.4319357 best solution, best possible -3.431946 (5.40 seconds)
+Cbc0010I After 5200 nodes, 138 on tree, -3.4319357 best solution, best possible -3.431946 (5.49 seconds)
+Cbc0010I After 5300 nodes, 138 on tree, -3.4319357 best solution, best possible -3.431946 (5.57 seconds)
+Cbc0010I After 5400 nodes, 137 on tree, -3.4319357 best solution, best possible -3.431946 (5.66 seconds)
+Cbc0010I After 5500 nodes, 133 on tree, -3.4319357 best solution, best possible -3.431946 (5.71 seconds)
+Cbc0010I After 5600 nodes, 134 on tree, -3.4319357 best solution, best possible -3.431946 (5.79 seconds)
+Cbc0010I After 5700 nodes, 131 on tree, -3.4319357 best solution, best possible -3.431946 (5.86 seconds)
+Cbc0010I After 5800 nodes, 130 on tree, -3.4319357 best solution, best possible -3.431946 (5.94 seconds)
+Cbc0010I After 5900 nodes, 122 on tree, -3.4319357 best solution, best possible -3.431946 (6.00 seconds)
+Cbc0010I After 6000 nodes, 118 on tree, -3.4319357 best solution, best possible -3.431946 (6.07 seconds)
+Cbc0010I After 6100 nodes, 114 on tree, -3.4319357 best solution, best possible -3.431946 (6.14 seconds)
+Cbc0010I After 6200 nodes, 122 on tree, -3.4319357 best solution, best possible -3.431946 (6.24 seconds)
+Cbc0010I After 6300 nodes, 129 on tree, -3.4319357 best solution, best possible -3.431946 (6.34 seconds)
+Cbc0010I After 6400 nodes, 129 on tree, -3.4319357 best solution, best possible -3.4319459 (6.42 seconds)
+Cbc0010I After 6500 nodes, 137 on tree, -3.4319357 best solution, best possible -3.4319459 (6.53 seconds)
+Cbc0010I After 6600 nodes, 136 on tree, -3.4319357 best solution, best possible -3.4319459 (6.60 seconds)
+Cbc0010I After 6700 nodes, 135 on tree, -3.4319357 best solution, best possible -3.4319459 (6.66 seconds)
+Cbc0010I After 6800 nodes, 133 on tree, -3.4319357 best solution, best possible -3.4319459 (6.73 seconds)
+Cbc0010I After 6900 nodes, 141 on tree, -3.4319357 best solution, best possible -3.4319459 (6.82 seconds)
+Cbc0010I After 7000 nodes, 139 on tree, -3.4319357 best solution, best possible -3.4319459 (6.90 seconds)
+Cbc0010I After 7100 nodes, 146 on tree, -3.4319357 best solution, best possible -3.4319459 (6.98 seconds)
+Cbc0010I After 7200 nodes, 140 on tree, -3.4319357 best solution, best possible -3.4319459 (7.06 seconds)
+Cbc0010I After 7300 nodes, 141 on tree, -3.4319357 best solution, best possible -3.4319459 (7.13 seconds)
+Cbc0010I After 7400 nodes, 137 on tree, -3.4319357 best solution, best possible -3.4319459 (7.21 seconds)
+Cbc0010I After 7500 nodes, 131 on tree, -3.4319357 best solution, best possible -3.4319459 (7.29 seconds)
+Cbc0010I After 7600 nodes, 134 on tree, -3.4319357 best solution, best possible -3.4319459 (7.37 seconds)
+Cbc0010I After 7700 nodes, 138 on tree, -3.4319357 best solution, best possible -3.4319459 (7.47 seconds)
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE QAOA Using NLP From line 17
+
+
+Cbc0010I After 7800 nodes, 132 on tree, -3.4319357 best solution, best possible -3.4319459 (7.53 seconds)
+Cbc0010I After 7900 nodes, 127 on tree, -3.4319357 best solution, best possible -3.4319459 (7.60 seconds)
+Cbc0010I After 8000 nodes, 119 on tree, -3.4319357 best solution, best possible -3.4319459 (7.65 seconds)
+Cbc0010I After 8100 nodes, 125 on tree, -3.4319357 best solution, best possible -3.4319459 (7.74 seconds)
+Cbc0010I After 8200 nodes, 119 on tree, -3.4319357 best solution, best possible -3.4319459 (7.81 seconds)
+Cbc0010I After 8300 nodes, 112 on tree, -3.4319357 best solution, best possible -3.4319459 (7.87 seconds)
+Cbc0010I After 8400 nodes, 104 on tree, -3.4319357 best solution, best possible -3.4319459 (7.94 seconds)
+Cbc0010I After 8500 nodes, 113 on tree, -3.4319357 best solution, best possible -3.4319459 (8.07 seconds)
+Cbc0010I After 8600 nodes, 124 on tree, -3.4319357 best solution, best possible -3.4319459 (8.22 seconds)
+Cbc0010I After 8700 nodes, 128 on tree, -3.4319357 best solution, best possible -3.4319459 (8.31 seconds)
+Cbc0010I After 8800 nodes, 127 on tree, -3.4319357 best solution, best possible -3.4319459 (8.41 seconds)
+Cbc0010I After 8900 nodes, 118 on tree, -3.4319357 best solution, best possible -3.4319459 (8.50 seconds)
+Cbc0010I After 9000 nodes, 117 on tree, -3.4319357 best solution, best possible -3.4319459 (8.59 seconds)
+Cbc0010I After 9100 nodes, 130 on tree, -3.4319357 best solution, best possible -3.4319459 (8.74 seconds)
+Cbc0010I After 9200 nodes, 139 on tree, -3.4319357 best solution, best possible -3.4319459 (8.84 seconds)
+Cbc0010I After 9300 nodes, 129 on tree, -3.4319357 best solution, best possible -3.4319459 (8.91 seconds)
+Cbc0010I After 9400 nodes, 114 on tree, -3.4319357 best solution, best possible -3.4319459 (8.97 seconds)
+Cbc0010I After 9500 nodes, 114 on tree, -3.4319357 best solution, best possible -3.4319459 (9.08 seconds)
+Cbc0010I After 9600 nodes, 120 on tree, -3.4319357 best solution, best possible -3.4319459 (9.18 seconds)
+Cbc0010I After 9700 nodes, 115 on tree, -3.4319357 best solution, best possible -3.4319459 (9.27 seconds)
+Cbc0010I After 9800 nodes, 103 on tree, -3.4319357 best solution, best possible -3.4319458 (9.35 seconds)
+Cbc0010I After 9900 nodes, 121 on tree, -3.4319357 best solution, best possible -3.4319458 (9.47 seconds)
+Cbc0010I After 10000 nodes, 133 on tree, -3.4319357 best solution, best possible -3.4319458 (9.59 seconds)
+Cbc0010I After 10100 nodes, 127 on tree, -3.4319357 best solution, best possible -3.4319458 (9.67 seconds)
+Cbc0010I After 10200 nodes, 111 on tree, -3.4319357 best solution, best possible -3.4319458 (9.73 seconds)
+Cbc0010I After 10300 nodes, 114 on tree, -3.4319357 best solution, best possible -3.4319458 (9.83 seconds)
+Cbc0010I After 10400 nodes, 109 on tree, -3.4319357 best solution, best possible -3.4319458 (9.93 seconds)
+Cbc0010I After 10500 nodes, 102 on tree, -3.4319357 best solution, best possible -3.4319458 (10.03 seconds)
+Cbc0010I After 10600 nodes, 106 on tree, -3.4319357 best solution, best possible -3.4319458 (10.15 seconds)
+Cbc0010I After 10700 nodes, 119 on tree, -3.4319357 best solution, best possible -3.4319458 (10.30 seconds)
+Cbc0010I After 10800 nodes, 120 on tree, -3.4319357 best solution, best possible -3.4319458 (10.40 seconds)
+Cbc0010I After 10900 nodes, 117 on tree, -3.4319357 best solution, best possible -3.4319458 (10.50 seconds)
+Cbc0010I After 11000 nodes, 115 on tree, -3.4319357 best solution, best possible -3.4319458 (10.55 seconds)
+Cbc0010I After 11100 nodes, 110 on tree, -3.4319357 best solution, best possible -3.4319458 (10.63 seconds)
+Cbc0010I After 11200 nodes, 113 on tree, -3.4319357 best solution, best possible -3.4319458 (10.69 seconds)
+Cbc0010I After 11300 nodes, 109 on tree, -3.4319357 best solution, best possible -3.4319458 (10.75 seconds)
+Cbc0010I After 11400 nodes, 107 on tree, -3.4319357 best solution, best possible -3.4319458 (10.81 seconds)
+Cbc0010I After 11500 nodes, 100 on tree, -3.4319357 best solution, best possible -3.4319458 (10.88 seconds)
+Cbc0010I After 11600 nodes, 80 on tree, -3.4319357 best solution, best possible -3.4319458 (10.95 seconds)
+Cbc0010I After 11700 nodes, 81 on tree, -3.4319357 best solution, best possible -3.4319458 (11.01 seconds)
+Cbc0010I After 11800 nodes, 81 on tree, -3.4319357 best solution, best possible -3.4319457 (11.13 seconds)
+Cbc0010I After 11900 nodes, 94 on tree, -3.4319357 best solution, best possible -3.4319457 (11.25 seconds)
+Cbc0010I After 12000 nodes, 105 on tree, -3.4319357 best solution, best possible -3.4319457 (11.37 seconds)
+Cbc0010I After 12100 nodes, 106 on tree, -3.4319357 best solution, best possible -3.4319457 (11.49 seconds)
+Cbc0010I After 12200 nodes, 79 on tree, -3.4319357 best solution, best possible -3.4319457 (11.57 seconds)
+Cbc0010I After 12300 nodes, 84 on tree, -3.4319357 best solution, best possible -3.4319457 (11.65 seconds)
+Cbc0010I After 12400 nodes, 88 on tree, -3.4319357 best solution, best possible -3.4319457 (11.76 seconds)
+Cbc0010I After 12500 nodes, 97 on tree, -3.4319357 best solution, best possible -3.4319457 (11.87 seconds)
+Cbc0010I After 12600 nodes, 90 on tree, -3.4319357 best solution, best possible -3.4319457 (11.97 seconds)
+Cbc0010I After 12700 nodes, 85 on tree, -3.4319357 best solution, best possible -3.4319457 (12.07 seconds)
+Cbc0010I After 12800 nodes, 92 on tree, -3.4319357 best solution, best possible -3.4319457 (12.14 seconds)
+Cbc0010I After 12900 nodes, 85 on tree, -3.4319357 best solution, best possible -3.4319457 (12.23 seconds)
+Cbc0010I After 13000 nodes, 76 on tree, -3.4319357 best solution, best possible -3.4319457 (12.31 seconds)
+GAMS 28.2.0  r750fa45 Released Aug 19, 2019 LEX-LEG x86 64bit/Linux                                                                                                                                                                    05/15/20 22:30:45 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE QAOA Using NLP From line 17
+
+
+Cbc0010I After 13100 nodes, 68 on tree, -3.4319357 best solution, best possible -3.4319457 (12.40 seconds)
+Cbc0010I After 13200 nodes, 53 on tree, -3.4319357 best solution, best possible -3.4319457 (12.48 seconds)
+Cbc0010I After 13300 nodes, 46 on tree, -3.4319357 best solution, best possible -3.4319457 (12.55 seconds)
+Cbc0010I After 13400 nodes, 38 on tree, -3.4319357 best solution, best possible -3.4319457 (12.60 seconds)
+Cbc0010I After 13500 nodes, 21 on tree, -3.4319357 best solution, best possible -3.4319457 (12.65 seconds)
+Cbc0010I After 13600 nodes, 2 on tree, -3.4319357 best solution, best possible -3.4319457 (12.70 seconds)
+Cbc0001I Search completed - best objective -3.431935692585289, took 21488 iterations and 13614 nodes (12.70 seconds)
+Cbc0035I Maximum depth 35, 0 variables fixed on reduced cost
+
+
+Best solution:    3.431936e+00   (13614 nodes, 12.729 seconds)
+Best possible:    3.431936e+00
+Absolute gap:     0.000000e+00   (absolute tolerance optca: 0)
+Relative gap:     0.000000e+00   (relative tolerance optcr: 0)
+
+                           LOWER          LEVEL          UPPER
+
+---- EQU objective          3.0000         3.0000         3.0000      
+
+                           LOWER          LEVEL          UPPER
+
+---- VAR gamma               .             0.2010         3.1416      
+---- VAR beta                .             0.3403         3.1416      
+---- VAR F1                -INF            3.4319        +INF         
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+                             0     ERRORS
+
+
+EXECUTION TIME       =        0.021 SECONDS      2 MB  28.2.0 r750fa45 LEX-LEG
+
+
+USER: Eval License Carnegie Mellon University        G191212/0001AB-GEN
+      Dept. of Chemical Engineering                              DCE375
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      /mnt/c/Users/debernal/GitHub/11860_project_qaoa/qaoa_maxcut_butterfly.gms
+Output     /mnt/c/Users/debernal/GitHub/11860_project_qaoa/qaoa_maxcut_butterfly.lst

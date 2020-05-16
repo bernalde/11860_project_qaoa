@@ -1,0 +1,86 @@
+--- Job maxcut_mip.gms Start 05/15/20 22:33:21 28.2.0 r750fa45 LEX-LEG x86 64bit/Linux
+--- GAMS Parameters defined
+    Input /mnt/c/Users/debernal/GitHub/11860_project_qaoa/maxcut_mip.gms
+    ScrDir /mnt/c/Users/debernal/GitHub/11860_project_qaoa/225a/
+    SysDir /home/bernalde/gams/gams28.2_linux_x64_64_sfx/
+GAMS 28.2.0   Copyright (C) 1987-2019 GAMS Development. All rights reserved
+Licensee: Eval License Carnegie Mellon University        G191212/0001AB-GEN
+          Dept. of Chemical Engineering                              DCE375
+          License for teaching and research at degree granting institutions
+          License Admin: Ignacio E. Grossmann,
+--- Starting compilation
+--- maxcut_mip.gms(42) 3 Mb
+--- Starting execution: elapsed 0:00:00.013
+--- maxcut_mip.gms(40) 4 Mb
+--- Generating MIP model maxcut
+--- maxcut_mip.gms(42) 4 Mb
+---   25 rows  12 columns  79 non-zeroes
+--- Executing CPLEX: elapsed 0:00:00.027
+
+IBM ILOG CPLEX   28.2.0 r750fa45 Released Aug 19, 2019 LEG x86 64bit/Linux
+Cplex 12.9.0.0
+
+*** Error Cannot open parameter file "/mnt/c/Users/debernal/GitHub/11860_project_qaoa/cplex.opt"
+*** Error Error code = 2; No such file or directory
+Reading data...
+Starting Cplex...
+Space for names approximately 0.00 Mb
+Use option 'names no' to turn use of names off
+CPXPARAM_Advance                                 0
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0.10000000000000001
+CPXPARAM_WorkDir                                 "/mnt/c/Users/debernal/GitHub/11860_project_qaoa/225a/"
+Found incumbent of value 4.000000 after 0.00 sec. (0.00 ticks)
+Tried aggregator 1 time.
+MIP Presolve eliminated 25 rows and 12 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+
+Root node processing (before b&c):
+  Real time             =    0.02 sec. (0.02 ticks)
+Sequential b&c:
+  Real time             =    0.00 sec. (0.00 ticks)
+                          ------------
+Total (root+branch&cut) =    0.02 sec. (0.02 ticks)
+MIP status(101): integer optimal solution
+Cplex Time: 0.03sec (det. 0.02 ticks)
+Fixing integer variables, and solving final LP...
+CPXPARAM_Advance                                 2
+CPXPARAM_Simplex_Display                         2
+CPXPARAM_Threads                                 1
+CPXPARAM_Parallel                                1
+CPXPARAM_MIP_Display                             4
+CPXPARAM_Simplex_Limits_Iterations               2000000000
+CPXPARAM_TimeLimit                               1000
+CPXPARAM_Tune_TimeLimit                          200
+CPXPARAM_MIP_Tolerances_AbsMIPGap                0
+CPXPARAM_MIP_Tolerances_MIPGap                   0.10000000000000001
+CPXPARAM_WorkDir                                 "/mnt/c/Users/debernal/GitHub/11860_project_qaoa/225a/"
+Tried aggregator 1 time.
+LP Presolve eliminated 25 rows and 12 columns.
+All rows and columns eliminated.
+Presolve time = 0.00 sec. (0.01 ticks)
+Fixed MIP status(1): optimal
+Cplex Time: 0.01sec (det. 0.02 ticks)
+
+Proven optimal solution.
+
+MIP Solution:            4.000000    (0 iterations, 0 nodes)
+Final Solve:             4.000000    (0 iterations)
+
+Best possible:           4.000000
+Absolute gap:            0.000000
+Relative gap:            0.000000
+
+--- Restarting execution
+--- maxcut_mip.gms(42) 2 Mb
+--- Reading solution for model maxcut
+*** Status: Normal completion
+--- Job maxcut_mip.gms Stop 05/15/20 22:33:21 elapsed 0:00:00.200
